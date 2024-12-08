@@ -1,0 +1,147 @@
+.about{
+    background-image: url('cofab.jpg');
+    background-size: cover;    
+    background-repeat: no-repeat;  
+    background-position: center;  
+    background-attachment: fixed; 
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header {
+    background-color: rgba(75, 46, 46, 0.8);
+    padding: 15px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    display: flex;   
+    justify-content: flex-end;
+    padding-right: 150px
+}
+.about-container {
+    margin-top: 100px;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(173 129 129 / 29%);
+    border-radius: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+    backdrop-filter: blur(13px);
+    box-shadow: 0px 4px 20px rgb(112 95 95 / 82%);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.about-container h1 {
+    font-size: 3em;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.about-container .intro {
+    color: #000000;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.values-section {
+    margin-top: 40px;
+}
+
+.values-section h2 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.value-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    flex: 1;
+    max-width: 250px;
+    background-color: rgb(0 0 0 / 80%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgb(0 0 0);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: cardFadeIn 1s forwards;
+}
+
+.value-card:nth-child(1) { animation-delay: 0.5s; }
+.value-card:nth-child(2) { animation-delay: 0.7s; }
+.value-card:nth-child(3) { animation-delay: 0.9s; }
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes cardFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.value-card h3 {
+    font-size: 1.5em;
+    color: #c5adad;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: #696969;
+    font-size: 1em;
+    line-height: 1.5;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 40px;
+}
+
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;   
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding-bottom: 5px; 
+    transition: color 0.5s ease-in-out;
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+.navbar ul li a:hover {
+    color: #6b6161;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}

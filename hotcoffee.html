@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="menu.css">
+<title>CCS Brewing Coffee</title>
+</head>
+<body class="menu">
+    <div class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="AboutUs.html">About us</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button type="submit">
+                🔍 
+            </button>
+        </div>
+    </div>
+    <div class="menu-navigation">
+        <ul>
+            <li><a href="menu.html">All Products</a></li>
+            <li><a href="hotcoffee.html">Hot Coffee</a></li>
+            <li><a href="coldcoffee.html">Cold Coffee</a></li>
+            <li><a href="specialdrinks.html">Special Drinks</a></li>
+            <li><a href="addons.html">Add-ons</a></li>
+        </ul>
+    </div>
+    <div class="product-container">
+        <div class="product-card" id="drink1">
+            <img src="espresso.jpg">
+            <h3>Espresso</h3>
+            <p>Price: ₱350.00</p>
+            <input type="number" id="quantity1" value="1" min="1" max="10">
+            <button class="add-to-cart" onclick="addToCart('Espresso', 350.00, 'drink1')">Add to Cart</button>
+        </div>
+        
+        <div class="product-card" id="drink2">
+            <img src="Latte.png">
+            <h3>Latte</h3>
+            <p>Price: ₱170.00</p>
+            <input type="number" id="quantity2" value="1" min="1" max="10">
+            <button class="add-to-cart" onclick="addToCart('Latte', 170.00, 'drink2')">Add to Cart</button>
+        </div>
+
+        <div class="product-card" id="drink3">
+            <img src="cappuccino.jpg">
+            <h3>Cappucino</h3>
+            <p>Price: ₱125.00</p>
+            <input type="number" id="quantity3" value="1" min="1" max="10">
+            <button class="add-to-cart" onclick="addToCart('Cappucino', 125.00, 'drink3')">Add to Cart</button>
+        </div>
+        <div id="cart-section">
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <p>Total Price: ₱<span id="total-price">0.00</span></p>
+            <button id="place-order" onclick="placeOrder()">Place Order</button>
+        </div>
+
+    <!-- Receipt Section (Hidden initially) -->
+    <div id="receipt-section" style="display:none;">
+        <button id="exit-receipt" onclick="refreshMenu()">×</button>
+        <h3>Order Receipt</h3>
+        <div id="receipt-items"></div>
+        <p>Total: ₱<span id="receipt-total">0.00</span></p>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>
